@@ -1,0 +1,360 @@
+/* navbar */
+.navbar-brand{
+font-size: xx-large !important;
+color: #a84b1a !important;
+}
+
+
+body{
+    background-color: rgb(153, 153, 202);
+}
+
+/* all listings */
+/* Villa Listing Container */
+.villa-listing-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.villa-listing-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+.card-click{
+    text-decoration: none;
+}
+
+/* Villa Cards Container */
+.villa-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* Villa Card Styles */
+.villa-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.villa-card:hover {
+    transform: translateY(-10px);
+}
+
+.villa-card-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.villa-card-info {
+    padding: 15px;
+}
+
+.villa-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.villa-card-location {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.villa-card-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #28a745;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .villa-cards-container {
+        justify-content: center;
+    }
+
+    .villa-card {
+        max-width: 100%;
+    }
+
+    .villa-listing-title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .villa-card-title {
+        font-size: 20px;
+    }
+
+    .villa-card-price {
+        font-size: 16px;
+    }
+
+    .villa-card-info {
+        padding: 10px;
+    }
+}
+/* footer */
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.footer-content {
+    flex: 1;
+    padding: 10px;
+}
+
+.footer-contact {
+    flex: 1;
+    padding: 10px;
+}
+
+.footer-social {
+    flex: 1;
+    padding: 10px;
+}
+
+.footer-social a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.footer-social a:hover {
+    color: #1e90ff;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-content, .footer-contact, .footer-social {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+}
+
+/*   show page css */
+.image-info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Image container */
+.image-info-container__image {
+    flex: 1 1 80%;
+    max-width: 80%;
+    margin-right: 20px;
+}
+
+/* Image style */
+.image-info-container__image-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Info container */
+.image-info-container__info {
+    flex: 1 1 18%;
+    max-width: 18%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.image-info-container__title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Description */
+.image-info-container__description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Info list */
+.image-info-container__info-list {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 14px;
+}
+
+.image-info-container__info-list li {
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .image-info-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-info-container__image {
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .image-info-container__info {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
+
+.image-info-container__buttons{
+    text-decoration: none;
+    display: flex;
+    gap: 2rem;
+}
+.image-info-container__buttons a{
+    text-decoration: none;
+    border: 1px solid green ;
+    border-radius: 10px;
+    color: white;
+     font-weight: 300;
+     font-size: 1.3rem;
+    background-color: #6fac8b;
+    padding: 0.5rem;
+
+}
+
+.image-info-container__buttons button{
+    text-decoration: none;
+    border-radius: 10px;
+    border: 2px solid red;
+    background-color: rgb(191, 123, 123);
+    color: white;
+     font-weight: 300;
+     font-size: 1.3rem;
+     padding: 0.5rem;
+}
+
+/*  css for edit page  */
+
+/* Form Container */
+.edit-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+/* Form Heading */
+.edit-form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form */
+.edit-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form Group */
+.edit-form-group {
+    margin-bottom: 15px;
+}
+
+/* Label */
+.edit-form-container label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Input Fields */
+.edit-form-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.edit-form-input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Textarea */
+textarea.edit-form-input {
+    resize: vertical;
+    height: 120px;
+}
+
+/* Submit Button */
+.edit-form-submit-btn {
+    background-color: #a84b1a;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-form-submit-btn:hover {
+    background-color: #a84b1a;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .edit-form-container {
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    .edit-form-container h1 {
+        font-size: 24px;
+    }
+
+    .edit-form-input, .edit-form-submit-btn {
+        font-size: 14px;
+    }
+}
+
+

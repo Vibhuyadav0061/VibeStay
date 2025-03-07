@@ -1,0 +1,32 @@
+<% layout('/BoilerPlate/boilerplate.ejs') %>
+
+
+    <div class="image-info-container">
+        <div class="image-info-container__image">
+            <img src="<%= listing.image %>" alt="<%= listing.title %>" class="image-info-container__image-img" />
+        </div>
+        <div class="image-info-container__info">
+            <h1 class="image-info-container__title"><%= listing.title %></h1>
+            <p class="image-info-container__description"><%= listing.description %></p>
+            <ul class="image-info-container__info-list">
+                <li><strong>Location:</strong> <%= listing.location %></li>
+                <li><strong>Country:</strong> <%= listing.country %></li>
+                <li><strong>Price:</strong> <%= listing.price %></li>
+            </ul>
+            
+            
+            <!-- Action Buttons (Edit & Delete) -->
+            <div class="image-info-container__buttons">
+                <a href="/listings/<%=listing._id%>/edit" class="image-info-container__edit-button">Edit</a>
+                <form action="/listings/<%=listing._id%>?_method=DELETE" method="POST" class="image-info-container__delete-form">
+                    <button type="submit" class="image-info-container__delete-button">Delete</button>
+                </form>
+            </div>
+            
+        </div>
+        
+    </div>
+
+
+   
+

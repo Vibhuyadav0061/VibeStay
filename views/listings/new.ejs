@@ -1,0 +1,47 @@
+<% layout('/BoilerPlate/boilerplate.ejs') %>
+<body>
+    <h3>Create new listing hear -</h3>
+    <form action="/listings" method="POST" class="edit-form">
+        <!-- Image URL -->
+        <div class="edit-form-group">
+            <label for="imageUrl">Image URL</label>
+            <input type="text" id="imageUrl" name="listing[image]"  class="edit-form-input" required>
+            
+        </div>
+        
+        <!-- Title -->
+        <div class="edit-form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="listing[title]"  class="edit-form-input" required>
+        </div>
+        
+        <!-- Description -->
+        <div class="edit-form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="listing[description]" class="edit-form-input" required></textarea>
+        </div>
+        
+        <!-- Location -->
+        <div class="edit-form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="listing[location]"  class="edit-form-input" required>
+        </div>
+        
+        <!-- Country -->
+        <div class="edit-form-group">
+            <label for="country">Country</label>
+            <input type="text" id="country" name="listing[country]"  class="edit-form-input" required>
+        </div>
+        
+        <!-- Price -->
+        <div class="edit-form-group">
+            <label for="price">Price</label>
+            <input type="text" id="price" name="listing[price]"  class="edit-form-input" required>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="edit-form-group">
+            <button type="submit" class="edit-form-submit-btn">ADD</button>
+        </div>
+    </form>
+</body>

@@ -1,0 +1,32 @@
+<% layout('/BoilerPlate/boilerplate.ejs') %>
+<body>
+    
+    <!-- <form action="/listings/new" method="get">
+        <button>ADD NEW LISTING</button>
+    </form> -->
+    
+    <div class="villa-listing-container">
+        <h1 class="villa-listing-title">Explore Our Villas</h1>
+        <div class="villa-cards-container">
+            <!-- Loop through the villas array and create a cart for each villa -->
+            <% alllistings.forEach(villa => { %>
+               <a class="card-click" href="/listings/<%=villa._id%>">
+                <div class="villa-card">
+                    <img src="<%= villa.image %>" alt="<%= villa.title %>" class="villa-card-image">
+                    <div class="villa-card-info">
+                        <h2 class="villa-card-title"><%= villa.title %></h2>
+                        <p class="villa-card-location"><%= villa.location %></p>
+                        <p class="villa-card-price"><%= villa.price %>/night</p>
+                    </div>
+                </div>
+               </a>
+            <% }); %>
+        </div>
+    </div>
+    <!-- <ul>
+
+        <% for(let listing of alllistings){ %>
+            <li><a href="/listings/<%= listing._id %>"><%= listing.title %></a></li>
+        <% } %>
+    </ul> -->
+</body>

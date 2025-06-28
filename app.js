@@ -74,15 +74,15 @@ app.use((req,res,next)=>{
 
 // make a demo user
 
-app.get("/demouser",async(req, res)=>{
-    let fakeuser = new User({
-        email:"yadav@getMaxListeners.com",
-        username:"yadav"
-    })
-    let newUser = await User.register(fakeuser,"123456");
-    res.send(newUser);
-    // register method make sure the unique username 
-})
+// app.get("/demouser",async(req, res)=>{
+//     let fakeuser = new User({
+//         email:"yadav@getMaxListeners.com",
+//         username:"yadav"
+//     })
+//     let newUser = await User.register(fakeuser,"123456");
+//     res.send(newUser);
+//     // register method make sure the unique username 
+// })
 
 
 
@@ -210,7 +210,9 @@ app.use('/',userRouter);
 
 // })
 
-
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
 app.get("*" , (req, res,next)=>{
     next(new ExpressError(404 , "Page Not Found !"));
 })

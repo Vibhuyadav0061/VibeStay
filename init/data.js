@@ -1,7 +1,7 @@
 const sampleListings = [
     {
       "title": "Luxury Villa in Bali",
-      "image": "",
+      "image": "https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg",
       "description": "A beautiful luxury villa with an ocean view.",
       "location": "Bali, Indonesia",
       
@@ -10,16 +10,16 @@ const sampleListings = [
     },
     {
       "title": "Cozy Cabin in Canada",
-      "image": "",
+      "image": "https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg",
       "description": "Escape into nature with this cozy wooden cabin.",
       "location": "Banff, Canada",
-     
+
       "country": "Canada",
       "price": 200
     },
     {
       "title": "Penthouse in New York",
-      "image": "",
+      "image": "https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg",
       "description": "A high-rise penthouse with breathtaking city views.",
       "location": "New York, USA",
     
@@ -28,7 +28,7 @@ const sampleListings = [
     },
     {
       "title": "Beach House in Maldives",
-      "image": "",
+      "image": "https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg",
       "description": "A private beach house with crystal-clear waters.",
       "location": "Malé, Maldives",
      
@@ -37,7 +37,7 @@ const sampleListings = [
     },
     {
       "title": "Mountain Lodge in Switzerland",
-      "image": "",
+      "image": "https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg",
       "description": "A cozy mountain lodge with stunning alpine views.",
       "location": "Zermatt, Switzerland",
      
@@ -46,7 +46,7 @@ const sampleListings = [
     },
     {
       "title": "Treehouse in Costa Rica",
-      "image": "",
+      "image": "https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg",
       "description": "A unique stay in a treehouse surrounded by nature.",
       "location": "Monteverde, Costa Rica",
       
@@ -55,7 +55,7 @@ const sampleListings = [
     },
     {
       "title": "Desert Camp in Dubai",
-      "image": "",
+      "image": "https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg",
       "description": "Experience the Arabian desert in a luxury tent.",
       "location": "Dubai, UAE",
       
@@ -64,7 +64,7 @@ const sampleListings = [
     },
     {
       "title": "Countryside Cottage in England",
-      "image": "",
+      "image": "https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg",
       "description": "A charming countryside cottage with a garden.",
       "location": "Cotswolds, England",
      
@@ -73,7 +73,7 @@ const sampleListings = [
     },
     {
       "title": "Santorini Cliffside Villa",
-      "image": "",
+      "image": "https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg",
       "description": "A stunning whitewashed villa overlooking the sea.",
       "location": "Santorini, Greece",
       
@@ -82,7 +82,7 @@ const sampleListings = [
     },
     {
       "title": "Tokyo High-Rise Apartment",
-      "image": "",
+      "image": "https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg",
       "description": "A modern apartment with a city skyline view.",
       "location": "Tokyo, Japan",
    
@@ -91,7 +91,7 @@ const sampleListings = [
     },
     {
       "title": "Riad in Marrakech",
-      "image": "",
+      "image": "https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg",
       "description": "An exotic riad with Moroccan-style decor.",
       "location": "Marrakech, Morocco",
      
@@ -100,7 +100,7 @@ const sampleListings = [
     },
     {
       "title": "Igloo in Finland",
-      "image": "",
+      "image": "https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg",
       "description": "A glass igloo with a view of the northern lights.",
       "location": "Lapland, Finland",
       
@@ -109,7 +109,7 @@ const sampleListings = [
     },
     {
       "title": "Safari Lodge in Kenya",
-      "image": "",
+      "image": "https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg",
       "description": "A luxury safari lodge in the heart of the savannah.",
       "location": "Masai Mara, Kenya",
       
@@ -118,7 +118,7 @@ const sampleListings = [
     },
     {
       "title": "Loft in Paris",
-      "image": "",
+      "image": "https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg",
       "description": "A chic loft in the heart of the city of love.",
       "location": "Paris, France",
       
@@ -127,7 +127,7 @@ const sampleListings = [
     },
     {
       "title": "Private Island in Fiji",
-      "image": "",
+      "image": "https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg",
       "description": "A whole island to yourself with breathtaking views.",
       "location": "Fiji Islands",
       
@@ -136,7 +136,7 @@ const sampleListings = [
     },
     {
       "title": "Sky Villa in Singapore",
-      "image": "",
+      "image": "https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg",
       "description": "A luxurious sky villa with rooftop infinity pool.",
       "location": "Singapore",
       
@@ -145,7 +145,7 @@ const sampleListings = [
     },
     {
       "title": "Cave Hotel in Turkey",
-      "image": "",
+      "image": "https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg",
       "description": "A cave-style hotel in the magical region of Cappadocia.",
       "location": "Cappadocia, Turkey",
       
@@ -154,7 +154,7 @@ const sampleListings = [
     },
     {
       "title": "Houseboat in Kerala",
-      "image": "",
+      "image": "https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg",
       "description": "A peaceful stay in a traditional Indian houseboat.",
       "location": "Alleppey, India",
      
@@ -163,7 +163,7 @@ const sampleListings = [
     },
     {
       "title": "Luxury Resort in Thailand",
-      "image": "",
+      "image": "https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg",
       "description": "A top-tier resort with a private beach and spa.",
       "location": "Phuket, Thailand",
       

@@ -1,13 +1,16 @@
 <% layout('/BoilerPlate/boilerplate.ejs') %>
 <body>
     <h3>Create new listing hear -</h3>
-    <form action="/listings" method="POST" class="edit-form">
+    <form action="/listings" method="POST" class="edit-form" enctype="multipart/form-data" novalidate>
         <!-- Image URL -->
         <div class="edit-form-group">
             <label for="imageUrl">Image URL</label>
-            <input type="text" id="imageUrl" name="listing[image]"  class="edit-form-input" required>
+            <input type="file" id="imageUrl" name="listing[image]"  class="edit-form-input" required>
             
         </div>
+        
+
+        
         
         <!-- Title -->
         <div class="edit-form-group">
@@ -36,7 +39,7 @@
         <!-- Price -->
         <div class="edit-form-group">
             <label for="price">Price</label>
-            <input type="text" id="price" name="listing[price]"  class="edit-form-input" required>
+            <input type="number" id="price" name="listing[price]"  class="edit-form-input" required>
         </div>
 
         <!-- Submit Button -->

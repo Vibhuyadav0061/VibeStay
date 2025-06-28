@@ -7,6 +7,7 @@
         </div>
         <div class="image-info-container__info">
             <h1 class="image-info-container__title"><%= listing.title %></h1>
+            <i><%=listing.owner.username%></i>
             <p class="image-info-container__description"><%= listing.description %></p>
             <ul class="image-info-container__info-list">
                 <li><strong>Location:</strong> <%= listing.location %></li>
@@ -16,17 +17,67 @@
             
             
             <!-- Action Buttons (Edit & Delete) -->
+             <%if(currUser && currUser._id.equals(listing.owner._id)){%>
             <div class="image-info-container__buttons">
                 <a href="/listings/<%=listing._id%>/edit" class="image-info-container__edit-button">Edit</a>
                 <form action="/listings/<%=listing._id%>?_method=DELETE" method="POST" class="image-info-container__delete-form">
                     <button type="submit" class="image-info-container__delete-button">Delete</button>
                 </form>
             </div>
+            <%}%>
             
+        </div>
+          <%if(currUser){%>
+        <div class="review-writing col-8">
+            <hr>
+            <h4>Leave a review -</h4>
+            <form action="/listings/<%=listing._id%>/reviews" method="post" novalidate class="needs-validation"> 
+                <div>
+                    <label for="rating"  class="form-label">Rating</label>
+                    <input type="range" min="1" max="5" name="review[rating]" id="rating" class="form-range form-control" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                      <div class="invalid-feedback">
+                        Please give rating.
+                      </div>
+                </div>
+                <div>
+                    <label for="comment" class="form-label">Comment</label>
+                    <textarea name="review[comment]" id="comment" cols="30" rows="5" class="form-control" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Write a review.
+                      </div>
+                </div>
+                <button class="submit-button button btn-outline-dark m-3 py-2 px-5">Submit</button>
+            </form>
+        </div>
+        <%}%>
+        <hr>
+        <div class="display-review">
+            <h4>ALL Reviews</h4>
+           <div class="row">
+            <% for(review of listing.reviews){%>
+                <div class="card col-4 mx-2 my-2">
+                 <h6><%=review.author.username%></h6>
+                 <p><%=review.comment%></p>
+                 <p><%=review.rating%> &#9734</p>
+                 <form action="/listings/<%=listing._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST">
+                    <button class="btn btn-sm btn-dark">
+                        Delete
+                    </button>
+                 </form>
+          </div>
+          <%}%>
+           </div>
+           
         </div>
         
     </div>
-
+   
 
    
 

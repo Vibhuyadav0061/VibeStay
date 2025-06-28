@@ -7,6 +7,7 @@ color: #a84b1a !important;
 
 body{
     background-color: rgb(153, 153, 202);
+    height: 80vh;
 }
 
 /* all listings */
@@ -165,16 +166,17 @@ body{
 /*   show page css */
 .image-info-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 10px auto ;
 }
 
 /* Image container */
 .image-info-container__image {
-    flex: 1 1 80%;
+    width: 60%;
     max-width: 80%;
-    margin-right: 20px;
+    margin: 20px;
 }
 
 /* Image style */
@@ -186,8 +188,8 @@ body{
 
 /* Info container */
 .image-info-container__info {
-    flex: 1 1 18%;
-    max-width: 18%;
+    /* flex: 1 1 18%; */
+    width: 60%;
     background-color: white;
     padding: 20px;
     border-radius: 8px;
@@ -217,6 +219,14 @@ body{
 .image-info-container__info-list li {
     margin-bottom: 10px;
 }
+
+/* review writing section */
+/* .review-writing{
+    width: 60%;
+} */
+ .display-review{
+    width: 60%;
+ }
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
@@ -355,6 +365,18 @@ textarea.edit-form-input {
     .edit-form-input, .edit-form-submit-btn {
         font-size: 14px;
     }
+}
+
+
+
+/* submit button styling  */
+.submit-button{
+    background-color: #1aa885;
+    border-radius: 5px;
+    border: 1px solid green;
+    color: white;
+    
+
 }
 
 

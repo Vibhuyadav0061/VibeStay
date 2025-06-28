@@ -33,7 +33,7 @@ const PORT = process.env.PORT || 8000;
 
 //  database connection 
 
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect(process.env.MONGO_URL,{useNewUrlParser:true,useUnifiedTopology:true})
 .then(()=>{
  console.log("Database connected successfullt");
 }).catch((err)=>{

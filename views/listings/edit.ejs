@@ -3,7 +3,7 @@
  
     <div class="edit-form-container">
         <h1>Edit Image Details</h1>
-        <form action="/listings/<%=listing._id%>?_method=PUT" method="POST" class="edit-form">
+        <form action="/listings/<%=listing._id%>?_method=PUT" method="POST" class="edit-form" enctype="multipart/form-data">
             <!-- Image URL -->
             <div class="edit-form-group">
                 <label for="imageUrl">Image URL</label>

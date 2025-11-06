@@ -10,7 +10,8 @@ const {isLogedIn} = require("../middleware.js")
 const listingsController = require('../controllers/listings.js')
 
 const multer  = require('multer') // multer used for image input in form
-const upload = multer({ dest: 'uploads/' })
+const {storage} = require("../configCloudinary.js")
+const upload = multer({storage})
 
 
 const validateListing = (req,res,next)=>{
@@ -24,22 +25,20 @@ const validateListing = (req,res,next)=>{
     }
 } 
 
-router.get("/" , wrapAsync(listingsController.index))
+router.get("/" ,wrapAsync(listingsController.index))
 router.get("/new" ,isLogedIn, wrapAsync(listingsController.newListing))
 //  show listing
 router.get("/:id" , wrapAsync(listingsController.showListing))
 
 //  create a new listing 
 
-router.post("/",upload.single('listing[image]'),(req,res)=>{
-    res.send(req.file);
-})
+router.post("/",upload.single('listing[image]'),listingsController.createNewListing)
 
 // edit the listing
 router.get("/:id/edit",isLogedIn ,wrapAsync(listingsController.editListing))
 
 // listing update 
-router.put("/:id", validateListing,wrapAsync(listingsController.updateListing))
+router.put("/:id", validateListing, upload.single('listing[image]'),wrapAsync(listingsController.updateListing))
 
 // delete route 
 router.delete("/:id",wrapAsync(listingsController.destroyListing))

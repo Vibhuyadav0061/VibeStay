@@ -4,14 +4,31 @@ font-size: xx-large !important;
 color: #a84b1a !important;
 }
 
-
-body{
-    background-color: rgb(153, 153, 202);
-    height: 80vh;
+html, body {
+  height: 100%;
+  margin: 0;
 }
+
+body {
+  background-color: rgb(153, 153, 202);
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+
+
 
 /* all listings */
 /* Villa Listing Container */
+
 .villa-listing-container {
     width: 100%;
     max-width: 1200px;
@@ -41,8 +58,8 @@ body{
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 350px;
+    /* width: 100%; */
+    width: 300px;
     overflow: hidden;
     transition: transform 0.3s ease;
 }

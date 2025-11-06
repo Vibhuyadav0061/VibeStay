@@ -1,10 +1,84 @@
+
+<style>
+    .filters{
+        display: flex;
+        /* flex-wrap: wrap; */
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+    }
+    .filters::-webkit-scrollbar {
+      display: none;
+    }
+    .filter{
+     text-align: center;
+     opacity: 0.7;
+     margin: 1rem;
+    }
+    .filter:hover{
+        opacity: 1;
+        cursor: pointer;
+    }
+    .max_toggle{
+        border: 1px solid black;
+        border-radius: 3px;
+        margin: auto auto;
+        padding-left: 1rem ;
+        padding-right: 1rem;
+    }
+    .tax_info{
+        display: none;
+    }
+</style>
 <% layout('/BoilerPlate/boilerplate.ejs') %>
  <%=success%>
     
     <!-- <form action="/listings/new" method="get">
         <button>ADD NEW LISTING</button>
     </form> -->
-    
+    <div class="filters">
+        <div class="filter">
+            <div><i class="fa-solid fa-fire"></i></div>
+            <p>Trendings</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-bed"></i></div>
+            <p>Rooms</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-chess-rook"></i></div>
+            <p>Castles</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-person-swimming"></i></div>
+            <p>Amazing pools</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-mountain-city"></i></div>
+            <p>Iconic Cities</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-mountain"></i></div>
+            <p>Mountain</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-campground"></i></div>
+            <p>Camping</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-cow"></i></div>
+            <p>Farms</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-archway"></i></div>
+            <p>Arctic</p>
+        </div>
+        <div class="max_toggle">
+            <div class="form-check-reverse form-switch">
+               <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+               <label class="form-check-label" for="switchCheckDefault">Displat total after taxes</label>
+            </div>
+        </div>
+    </div>
     <div class="villa-listing-container">
         <h1 class="villa-listing-title">Explore Our Villas</h1>
         <div class="villa-cards-container">
@@ -12,11 +86,13 @@
             <% alllistings.forEach(villa => { %>
                <a class="card-click" href="/listings/<%=villa._id%>">
                 <div class="villa-card">
-                    <img src="<%= villa.image %>" alt="<%= villa.title %>" class="villa-card-image">
+                    <img src="<%= villa.image.url %>" alt="<%= villa.title %>" class="villa-card-image">
                     <div class="villa-card-info">
                         <h2 class="villa-card-title"><%= villa.title %></h2>
                         <p class="villa-card-location"><%= villa.location %></p>
-                        <p class="villa-card-price"><%= villa.price %>/night</p>
+                        <p class="villa-card-price"><%= villa.price %>/night
+                            <i class="tax_info">&nbsp; &nbsp; +18% GST </i>
+                        </p>
                     </div>
                 </div>
                </a>
@@ -30,3 +106,15 @@
         <% } %>
     </ul> -->
 
+<script>
+    let taxSwitch = document.getElementById("switchCheckDefault")
+    taxSwitch.addEventListener("click", ()=>{
+        let tax_info = document.getElementsByClassName("tax_info");
+        // console.log(tax_info)
+        for(info of tax_info){
+         info.style.display = "block";
+        }
+    })
+
+
+</script>

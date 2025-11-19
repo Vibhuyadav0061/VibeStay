@@ -127,10 +127,15 @@ main {
 /* footer */
 /* Footer Styles */
 .footer {
-    background-color: #333;
+    background-color: #673f2a;
     color: #fff;
     padding: 20px 0;
     text-align: center;
+}
+.footer a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight:300;
 }
 
 .footer-container {
@@ -395,5 +400,6 @@ textarea.edit-form-input {
     
 
 }
+
 
 

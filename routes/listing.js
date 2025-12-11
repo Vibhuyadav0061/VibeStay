@@ -31,14 +31,13 @@ router.get("/new" ,isLogedIn, wrapAsync(listingsController.newListing))
 router.get("/:id" , wrapAsync(listingsController.showListing))
 
 //  create a new listing 
-
 router.post("/",upload.single('listing[image]'),listingsController.createNewListing)
 
 // edit the listing
 router.get("/:id/edit",isLogedIn ,wrapAsync(listingsController.editListing))
 
 // listing update 
-router.put("/:id", validateListing, upload.single('listing[image]'),wrapAsync(listingsController.updateListing))
+router.put("/:id", upload.single('image'),wrapAsync(listingsController.updateListing))
 
 // delete route 
 router.delete("/:id",wrapAsync(listingsController.destroyListing))

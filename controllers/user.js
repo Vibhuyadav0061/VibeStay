@@ -1,4 +1,6 @@
 const User = require('../models/user')
+const nodemailer = require("nodemailer");
+require("dotenv").config();
 module.exports.signupRender = async(req, res)=>{
     try{
        res.render('user/signup.ejs')
@@ -14,10 +16,44 @@ module.exports.signupUser = async(req, res)=>{
         const {username , email , password} = req.body;
     let newUser = new User({email,username});
     const registeredUser = await User.register(newUser,password);
-    req.login(registeredUser,(err)=>{
+    req.login(registeredUser,async(err)=>{
         if(err){
             return next(err);
         }
+        // 📩 Create mail transporter
+      const transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 587,
+        secure: false, // TLS
+        auth: {
+          user: "yourbro0061@gmail.com",
+          pass: process.env.APP_PASS,
+        },
+      });
+
+      // 📩 Prepare message
+      const message = {
+        from: "yourbro0061@gmail.com",
+        to: email,  // Send to user’s email
+        subject: "Welcome to VibeStay!",
+        html: `
+          <h2>Welcome to VibeStay, ${username}! 🎉</h2>
+          <p>We are excited to have you on board.</p>
+          <p><b>Your Login Details:</b></p>
+          <p>Email: ${email}</p>
+          <p>Password: ${password}</p>
+          <br/>
+          <p>Enjoy exploring VibeStay!</p>
+        `,
+      };
+
+      // 📩 Send email
+      try {
+        await transporter.sendMail(message);
+        console.log("Signup email sent successfully");
+      } catch (mailErr) {
+        console.log("Email error: ", mailErr);
+      }
          req.flash("success","Welcome to VibeStay")
          res.redirect('/listings')
     })
